@@ -1,0 +1,1959 @@
+{
+  "scene": {
+    "isObject3D": "data",
+    "uuid": "data",
+    "name": "data",
+    "type": "data",
+    "children": [
+      {
+        "isObject3D": "data",
+        "uuid": "data",
+        "name": "data",
+        "type": "data",
+        "children": [
+          {
+            "isObject3D": "data",
+            "uuid": "data",
+            "name": "data",
+            "type": "data",
+            "children": [
+              {
+                "isObject3D": "data",
+                "uuid": "data",
+                "name": "data",
+                "type": "data",
+                "children": [
+                  {
+                    "isObject3D": "data",
+                    "uuid": "data",
+                    "name": "data",
+                    "type": "data",
+                    "children": [
+                      {
+                        "isObject3D": "data",
+                        "uuid": "data",
+                        "name": "data",
+                        "type": "data",
+                        "children": [
+                          {
+                            "isObject3D": "data",
+                            "uuid": "data",
+                            "name": "data",
+                            "type": "data",
+                            "children": [
+                              {
+                                "isObject3D": "data",
+                                "uuid": "data",
+                                "name": "data",
+                                "type": "data",
+                                "children": [
+                                  {
+                                    "isObject3D": "data",
+                                    "uuid": "data",
+                                    "name": "data",
+                                    "type": "data",
+                                    "children": [],
+                                    "up": "data",
+                                    "position": "data",
+                                    "rotation": "data",
+                                    "quaternion": "data",
+                                    "scale": "data",
+                                    "matrix": "data",
+                                    "matrixWorld": "data",
+                                    "matrixAutoUpdate": "data",
+                                    "matrixWorldAutoUpdate": "data",
+                                    "matrixWorldNeedsUpdate": "data",
+                                    "layers": "data",
+                                    "visible": "data",
+                                    "castShadow": "data",
+                                    "receiveShadow": "data",
+                                    "frustumCulled": "data",
+                                    "renderOrder": "data",
+                                    "animations": [],
+                                    "customDepthMaterial": "data",
+                                    "customDistanceMaterial": "data",
+                                    "static": "data",
+                                    "userData": "data",
+                                    "pivot": "data"
+                                  }
+                                ],
+                                "up": {
+                                  "x": "data",
+                                  "y": "data",
+                                  "z": "data",
+                                  "isVector3": "data"
+                                },
+                                "position": {
+                                  "x": "data",
+                                  "y": "data",
+                                  "z": "data",
+                                  "isVector3": "data"
+                                },
+                                "rotation": {
+                                  "isEuler": "data"
+                                },
+                                "quaternion": {
+                                  "isQuaternion": "data"
+                                },
+                                "scale": {
+                                  "x": "data",
+                                  "y": "data",
+                                  "z": "data",
+                                  "isVector3": "data"
+                                },
+                                "matrix": {
+                                  "elements": [
+                                    "data"
+                                  ],
+                                  "isMatrix4": "data"
+                                },
+                                "matrixWorld": {
+                                  "elements": [
+                                    "data"
+                                  ],
+                                  "isMatrix4": "data"
+                                },
+                                "matrixAutoUpdate": "data",
+                                "matrixWorldAutoUpdate": "data",
+                                "matrixWorldNeedsUpdate": "data",
+                                "layers": {
+                                  "mask": "data"
+                                },
+                                "visible": "data",
+                                "castShadow": "data",
+                                "receiveShadow": "data",
+                                "frustumCulled": "data",
+                                "renderOrder": "data",
+                                "animations": [],
+                                "customDepthMaterial": "data",
+                                "customDistanceMaterial": "data",
+                                "static": "data",
+                                "userData": {
+                                  "name": "data"
+                                },
+                                "pivot": "data",
+                                "isBone": "data"
+                              }
+                            ],
+                            "up": {
+                              "x": "data",
+                              "y": "data",
+                              "z": "data",
+                              "isVector3": "data"
+                            },
+                            "position": {
+                              "x": "data",
+                              "y": "data",
+                              "z": "data",
+                              "isVector3": "data"
+                            },
+                            "rotation": {
+                              "isEuler": "data"
+                            },
+                            "quaternion": {
+                              "isQuaternion": "data"
+                            },
+                            "scale": {
+                              "x": "data",
+                              "y": "data",
+                              "z": "data",
+                              "isVector3": "data"
+                            },
+                            "matrix": {
+                              "elements": [
+                                "data"
+                              ],
+                              "isMatrix4": "data"
+                            },
+                            "matrixWorld": {
+                              "elements": [
+                                "data"
+                              ],
+                              "isMatrix4": "data"
+                            },
+                            "matrixAutoUpdate": "data",
+                            "matrixWorldAutoUpdate": "data",
+                            "matrixWorldNeedsUpdate": "data",
+                            "layers": {
+                              "mask": "data"
+                            },
+                            "visible": "data",
+                            "castShadow": "data",
+                            "receiveShadow": "data",
+                            "frustumCulled": "data",
+                            "renderOrder": "data",
+                            "animations": [],
+                            "customDepthMaterial": "data",
+                            "customDistanceMaterial": "data",
+                            "static": "data",
+                            "userData": {
+                              "name": "data"
+                            },
+                            "pivot": "data",
+                            "isBone": "data"
+                          }
+                        ],
+                        "up": {
+                          "x": "data",
+                          "y": "data",
+                          "z": "data",
+                          "isVector3": "data"
+                        },
+                        "position": {
+                          "x": "data",
+                          "y": "data",
+                          "z": "data",
+                          "isVector3": "data"
+                        },
+                        "rotation": {
+                          "isEuler": "data"
+                        },
+                        "quaternion": {
+                          "isQuaternion": "data"
+                        },
+                        "scale": {
+                          "x": "data",
+                          "y": "data",
+                          "z": "data",
+                          "isVector3": "data"
+                        },
+                        "matrix": {
+                          "elements": [
+                            "data"
+                          ],
+                          "isMatrix4": "data"
+                        },
+                        "matrixWorld": {
+                          "elements": [
+                            "data"
+                          ],
+                          "isMatrix4": "data"
+                        },
+                        "matrixAutoUpdate": "data",
+                        "matrixWorldAutoUpdate": "data",
+                        "matrixWorldNeedsUpdate": "data",
+                        "layers": {
+                          "mask": "data"
+                        },
+                        "visible": "data",
+                        "castShadow": "data",
+                        "receiveShadow": "data",
+                        "frustumCulled": "data",
+                        "renderOrder": "data",
+                        "animations": [],
+                        "customDepthMaterial": "data",
+                        "customDistanceMaterial": "data",
+                        "static": "data",
+                        "userData": {
+                          "name": "data"
+                        },
+                        "pivot": "data",
+                        "isBone": "data"
+                      }
+                    ],
+                    "up": {
+                      "x": "data",
+                      "y": "data",
+                      "z": "data",
+                      "isVector3": "data"
+                    },
+                    "position": {
+                      "x": "data",
+                      "y": "data",
+                      "z": "data",
+                      "isVector3": "data"
+                    },
+                    "rotation": {
+                      "isEuler": "data"
+                    },
+                    "quaternion": {
+                      "isQuaternion": "data"
+                    },
+                    "scale": {
+                      "x": "data",
+                      "y": "data",
+                      "z": "data",
+                      "isVector3": "data"
+                    },
+                    "matrix": {
+                      "elements": [
+                        "data"
+                      ],
+                      "isMatrix4": "data"
+                    },
+                    "matrixWorld": {
+                      "elements": [
+                        "data"
+                      ],
+                      "isMatrix4": "data"
+                    },
+                    "matrixAutoUpdate": "data",
+                    "matrixWorldAutoUpdate": "data",
+                    "matrixWorldNeedsUpdate": "data",
+                    "layers": {
+                      "mask": "data"
+                    },
+                    "visible": "data",
+                    "castShadow": "data",
+                    "receiveShadow": "data",
+                    "frustumCulled": "data",
+                    "renderOrder": "data",
+                    "animations": [],
+                    "customDepthMaterial": "data",
+                    "customDistanceMaterial": "data",
+                    "static": "data",
+                    "userData": {
+                      "name": "data"
+                    },
+                    "pivot": "data",
+                    "isBone": "data"
+                  }
+                ],
+                "up": {
+                  "x": "data",
+                  "y": "data",
+                  "z": "data",
+                  "isVector3": "data"
+                },
+                "position": {
+                  "x": "data",
+                  "y": "data",
+                  "z": "data",
+                  "isVector3": "data"
+                },
+                "rotation": {
+                  "isEuler": "data"
+                },
+                "quaternion": {
+                  "isQuaternion": "data"
+                },
+                "scale": {
+                  "x": "data",
+                  "y": "data",
+                  "z": "data",
+                  "isVector3": "data"
+                },
+                "matrix": {
+                  "elements": [
+                    "data"
+                  ],
+                  "isMatrix4": "data"
+                },
+                "matrixWorld": {
+                  "elements": [
+                    "data"
+                  ],
+                  "isMatrix4": "data"
+                },
+                "matrixAutoUpdate": "data",
+                "matrixWorldAutoUpdate": "data",
+                "matrixWorldNeedsUpdate": "data",
+                "layers": {
+                  "mask": "data"
+                },
+                "visible": "data",
+                "castShadow": "data",
+                "receiveShadow": "data",
+                "frustumCulled": "data",
+                "renderOrder": "data",
+                "animations": [],
+                "customDepthMaterial": "data",
+                "customDistanceMaterial": "data",
+                "static": "data",
+                "userData": {
+                  "name": "data"
+                },
+                "pivot": "data",
+                "isBone": "data"
+              }
+            ],
+            "up": {
+              "x": "data",
+              "y": "data",
+              "z": "data",
+              "isVector3": "data"
+            },
+            "position": {
+              "x": "data",
+              "y": "data",
+              "z": "data",
+              "isVector3": "data"
+            },
+            "rotation": {
+              "isEuler": "data"
+            },
+            "quaternion": {
+              "isQuaternion": "data"
+            },
+            "scale": {
+              "x": "data",
+              "y": "data",
+              "z": "data",
+              "isVector3": "data"
+            },
+            "matrix": {
+              "elements": [
+                "data"
+              ],
+              "isMatrix4": "data"
+            },
+            "matrixWorld": {
+              "elements": [
+                "data"
+              ],
+              "isMatrix4": "data"
+            },
+            "matrixAutoUpdate": "data",
+            "matrixWorldAutoUpdate": "data",
+            "matrixWorldNeedsUpdate": "data",
+            "layers": {
+              "mask": "data"
+            },
+            "visible": "data",
+            "castShadow": "data",
+            "receiveShadow": "data",
+            "frustumCulled": "data",
+            "renderOrder": "data",
+            "animations": [],
+            "customDepthMaterial": "data",
+            "customDistanceMaterial": "data",
+            "static": "data",
+            "userData": {
+              "name": "data"
+            },
+            "pivot": "data",
+            "isBone": "data"
+          }
+        ],
+        "up": {
+          "x": "data",
+          "y": "data",
+          "z": "data",
+          "isVector3": "data"
+        },
+        "position": {
+          "x": "data",
+          "y": "data",
+          "z": "data",
+          "isVector3": "data"
+        },
+        "rotation": {
+          "isEuler": "data"
+        },
+        "quaternion": {
+          "isQuaternion": "data"
+        },
+        "scale": {
+          "x": "data",
+          "y": "data",
+          "z": "data",
+          "isVector3": "data"
+        },
+        "matrix": {
+          "elements": [
+            "data"
+          ],
+          "isMatrix4": "data"
+        },
+        "matrixWorld": {
+          "elements": [
+            "data"
+          ],
+          "isMatrix4": "data"
+        },
+        "matrixAutoUpdate": "data",
+        "matrixWorldAutoUpdate": "data",
+        "matrixWorldNeedsUpdate": "data",
+        "layers": {
+          "mask": "data"
+        },
+        "visible": "data",
+        "castShadow": "data",
+        "receiveShadow": "data",
+        "frustumCulled": "data",
+        "renderOrder": "data",
+        "animations": [],
+        "customDepthMaterial": "data",
+        "customDistanceMaterial": "data",
+        "static": "data",
+        "userData": {
+          "name": "data",
+          "inverseCacheProxy": {
+            "matrix": "circular"
+          }
+        },
+        "pivot": "data",
+        "isBone": "data"
+      }
+    ],
+    "up": {
+      "x": "data",
+      "y": "data",
+      "z": "data",
+      "isVector3": "data"
+    },
+    "position": {
+      "x": "data",
+      "y": "data",
+      "z": "data",
+      "isVector3": "data"
+    },
+    "rotation": {
+      "isEuler": "data"
+    },
+    "quaternion": {
+      "isQuaternion": "data"
+    },
+    "scale": {
+      "x": "data",
+      "y": "data",
+      "z": "data",
+      "isVector3": "data"
+    },
+    "matrix": {
+      "elements": [
+        "data"
+      ],
+      "isMatrix4": "data"
+    },
+    "matrixWorld": {
+      "elements": [
+        "data"
+      ],
+      "isMatrix4": "data"
+    },
+    "matrixAutoUpdate": "data",
+    "matrixWorldAutoUpdate": "data",
+    "matrixWorldNeedsUpdate": "data",
+    "layers": {
+      "mask": "data"
+    },
+    "visible": "data",
+    "castShadow": "data",
+    "receiveShadow": "data",
+    "frustumCulled": "data",
+    "renderOrder": "data",
+    "animations": [],
+    "customDepthMaterial": "data",
+    "customDistanceMaterial": "data",
+    "static": "data",
+    "userData": {},
+    "pivot": "data",
+    "isGroup": "data"
+  },
+  "meta": {
+    "metaVersion": "data",
+    "name": "data",
+    "version": "data",
+    "authors": [
+      "data"
+    ],
+    "copyrightInformation": "data",
+    "contactInformation": "data",
+    "references": "data",
+    "thirdPartyLicenses": "data",
+    "thumbnailImage": "data",
+    "licenseUrl": "data",
+    "avatarPermission": "data",
+    "allowExcessivelyViolentUsage": "data",
+    "allowExcessivelySexualUsage": "data",
+    "commercialUsage": "data",
+    "allowPoliticalOrReligiousUsage": "data",
+    "allowAntisocialOrHateUsage": "data",
+    "creditNotation": "data",
+    "allowRedistribution": "data",
+    "modification": "data",
+    "otherLicenseUrl": "data"
+  },
+  "humanoid": {
+    "autoUpdateHumanBones": "data"
+  },
+  "expressionManager": {
+    "blinkExpressionNames": [
+      "data"
+    ],
+    "lookAtExpressionNames": [
+      "data"
+    ],
+    "mouthExpressionNames": [
+      "data"
+    ]
+  },
+  "firstPerson": {
+    "humanoid": "circular",
+    "meshAnnotations": [
+      {
+        "meshes": [
+          {
+            "isObject3D": "data",
+            "uuid": "data",
+            "name": "data",
+            "type": "data",
+            "children": [],
+            "up": {
+              "x": "data",
+              "y": "data",
+              "z": "data",
+              "isVector3": "data"
+            },
+            "position": {
+              "x": "data",
+              "y": "data",
+              "z": "data",
+              "isVector3": "data"
+            },
+            "rotation": {
+              "isEuler": "data"
+            },
+            "quaternion": {
+              "isQuaternion": "data"
+            },
+            "scale": {
+              "x": "data",
+              "y": "data",
+              "z": "data",
+              "isVector3": "data"
+            },
+            "matrix": {
+              "elements": [
+                "data"
+              ],
+              "isMatrix4": "data"
+            },
+            "matrixWorld": {
+              "elements": [
+                "data"
+              ],
+              "isMatrix4": "data"
+            },
+            "matrixAutoUpdate": "data",
+            "matrixWorldAutoUpdate": "data",
+            "matrixWorldNeedsUpdate": "data",
+            "layers": {
+              "mask": "data"
+            },
+            "visible": "data",
+            "castShadow": "data",
+            "receiveShadow": "data",
+            "frustumCulled": "data",
+            "renderOrder": "data",
+            "animations": [],
+            "customDepthMaterial": "data",
+            "customDistanceMaterial": "data",
+            "static": "data",
+            "userData": {
+              "targetNames": [
+                "data"
+              ]
+            },
+            "pivot": "data",
+            "isMesh": "data",
+            "geometry": {
+              "isBufferGeometry": "data",
+              "uuid": "data",
+              "name": "data",
+              "type": "data",
+              "index": {
+                "isBufferAttribute": "data",
+                "name": "data",
+                "array": {"data" : "data"},
+                "itemSize": "data",
+                "count": "data",
+                "normalized": "data",
+                "usage": "data",
+                "updateRanges": [],
+                "gpuType": "data",
+                "version": "data"
+              },
+              "indirect": "data",
+              "indirectOffset": "data",
+              "attributes": {
+                "position": {
+                  "isBufferAttribute": "data",
+                  "name": "data",
+                  "array": {"data" : "data"},
+                  "itemSize": "data",
+                  "count": "data",
+                  "normalized": "data",
+                  "usage": "data",
+                  "updateRanges": [],
+                  "gpuType": "data",
+                  "version": "data"
+                },
+                "normal": {
+                  "isBufferAttribute": "data",
+                  "name": "data",
+                 "array": {"data" : "data"},
+                  "itemSize": "data",
+                  "count": "data",
+                  "normalized": "data",
+                  "usage": "data",
+                  "updateRanges": [],
+                  "gpuType": "data",
+                  "version": "data"
+                },
+                "uv": {
+                  "isBufferAttribute": "data",
+                  "name": "data",
+                  "array": {"data" : "data"},
+                  "itemSize": "data",
+                  "count": "data",
+                  "normalized": "data",
+                  "usage": "data",
+                  "updateRanges": [],
+                  "gpuType": "data",
+                  "version": "data"
+                },
+                "skinIndex": {
+                  "isBufferAttribute": "data",
+                  "name": "data",
+                  "array": {"data" : "data"},
+                  "itemSize": "data",
+                  "count": "data",
+                  "normalized": "data",
+                  "usage": "data",
+                  "updateRanges": [],
+                  "gpuType": "data",
+                  "version": "data"
+                },
+                "skinWeight": {
+                  "isBufferAttribute": "data",
+                  "name": "data",
+                  "array": {"data" : "data"},
+                  "itemSize": "data",
+                  "count": "data",
+                  "normalized": "data",
+                  "usage": "data",
+                  "updateRanges": [],
+                  "gpuType": "data",
+                  "version": "data"
+                }
+              },
+              "morphAttributes": {
+                "position": [
+                  {
+                    "isBufferAttribute": "data",
+                    "name": "data",
+                   "array": {"data" : "data"},
+                    "itemSize": "data",
+                    "count": "data",
+                    "normalized": "data",
+                    "usage": "data",
+                    "updateRanges": [],
+                    "gpuType": "data",
+                    "version": "data"
+                  }
+                ],
+                "normal": [
+                  {
+                    "isBufferAttribute": "data",
+                    "name": "data",
+                    "array": {"data" : "data"},
+                    "itemSize": "data",
+                    "count": "data",
+                    "normalized": "data",
+                    "usage": "data",
+                    "updateRanges": [],
+                    "gpuType": "data",
+                    "version": "data"
+                  }
+                ]
+              },
+              "morphTargetsRelative": "data",
+              "groups": [],
+              "boundingBox": {
+                "isBox3": "data",
+                "min": {
+                  "x": "data",
+                  "y": "data",
+                  "z": "data",
+                  "isVector3": "data"
+                },
+                "max": {
+                  "x": "data",
+                  "y": "data",
+                  "z": "data",
+                  "isVector3": "data"
+                }
+              },
+              "boundingSphere": {
+                "isSphere": "data",
+                "center": {
+                  "x": "data",
+                  "y": "data",
+                  "z": "data",
+                  "isVector3": "data"
+                },
+                "radius": "data"
+              },
+              "drawRange": {
+                "start": "data",
+                "count": "data"
+              },
+              "userData": {
+                "targetNames": [
+                  "data"
+                ]
+              }
+            },
+            "material": {
+              "isMaterial": "data",
+              "uuid": "data",
+              "name": "data",
+              "type": "data",
+              "blending": "data",
+              "side": "data",
+              "vertexColors": "data",
+              "opacity": "data",
+              "transparent": "data",
+              "alphaHash": "data",
+              "blendSrc": "data",
+              "blendDst": "data",
+              "blendEquation": "data",
+              "blendSrcAlpha": "data",
+              "blendDstAlpha": "data",
+              "blendEquationAlpha": "data",
+              "blendColor": {
+                "isColor": "data",
+                "r": "data",
+                "g": "data",
+                "b": "data"
+              },
+              "blendAlpha": "data",
+              "depthFunc": "data",
+              "depthTest": "data",
+              "depthWrite": "data",
+              "stencilWriteMask": "data",
+              "stencilFunc": "data",
+              "stencilRef": "data",
+              "stencilFuncMask": "data",
+              "stencilFail": "data",
+              "stencilZFail": "data",
+              "stencilZPass": "data",
+              "stencilWrite": "data",
+              "clippingPlanes": "data",
+              "clipIntersection": "data",
+              "clipShadows": "data",
+              "shadowSide": "data",
+              "colorWrite": "data",
+              "precision": "data",
+              "polygonOffset": "data",
+              "polygonOffsetFactor": "data",
+              "polygonOffsetUnits": "data",
+              "dithering": "data",
+              "alphaToCoverage": "data",
+              "premultipliedAlpha": "data",
+              "forceSinglePass": "data",
+              "allowOverride": "data",
+              "visible": "data",
+              "toneMapped": "data",
+              "userData": {
+                "gltfExtensions": {
+                  "VRMC_materials_mtoon": {
+                    "specVersion": "data",
+                    "transparentWithZWrite": "data",
+                    "renderQueueOffsetNumber": "data",
+                    "shadeColorFactor": [
+                      "data"
+                    ],
+                    "shadeMultiplyTexture": {
+                      "extensions": {
+                        "KHR_texture_transform": "data"
+                      },
+                      "index": "data"
+                    },
+                    "shadingShiftFactor": "data",
+                    "shadingToonyFactor": "data",
+                    "giEqualizationFactor": "data",
+                    "matcapFactor": [
+                      "data"
+                    ],
+                    "matcapTexture": {
+                      "index": "data"
+                    },
+                    "parametricRimColorFactor": [
+                      "data"
+                    ],
+                    "rimLightingMixFactor": "data",
+                    "parametricRimFresnelPowerFactor": "data",
+                    "parametricRimLiftFactor": "data",
+                    "outlineWidthMode": "data",
+                    "outlineColorFactor": [
+                      "data"
+                    ],
+                    "outlineLightingMixFactor": "data",
+                    "uvAnimationScrollXSpeedFactor": "data",
+                    "uvAnimationScrollYSpeedFactor": "data",
+                    "uvAnimationRotationSpeedFactor": "data"
+                  }
+                }
+              },
+              "version": "data",
+              "isShaderMaterial": "data",
+              "defines": {},
+              "uniforms": {
+                "diffuse": {
+                  "value": {
+                    "isColor": "data",
+                    "r": "data",
+                    "g": "data",
+                    "b": "data"
+                  }
+                },
+                "opacity": {
+                  "value": "data"
+                },
+                "map": {
+                  "value": {
+                    "isTexture": "data",
+                    "uuid": "data",
+                    "name": "data",
+                    "source": {
+                      "isSource": "data",
+                      "uuid": "data",
+                      "data": {
+                        "width": "data",
+                        "height": "data"
+                      },
+                      "dataReady": "data",
+                      "version": "data"
+                    },
+                    "mipmaps": [],
+                    "mapping": "data",
+                    "channel": "data",
+                    "wrapS": "data",
+                    "wrapT": "data",
+                    "magFilter": "data",
+                    "minFilter": "data",
+                    "anisotropy": "data",
+                    "format": "data",
+                    "internalFormat": "data",
+                    "type": "data",
+                    "offset": {
+                      "x": "data",
+                      "y": "data",
+                      "isVector2": "data"
+                    },
+                    "repeat": {
+                      "x": "data",
+                      "y": "data",
+                      "isVector2": "data"
+                    },
+                    "center": {
+                      "x": "data",
+                      "y": "data",
+                      "isVector2": "data"
+                    },
+                    "rotation": "data",
+                    "matrixAutoUpdate": "data",
+                    "matrix": {
+                      "elements": [
+                        "data"
+                      ],
+                      "isMatrix3": "data"
+                    },
+                    "generateMipmaps": "data",
+                    "premultiplyAlpha": "data",
+                    "flipY": "data",
+                    "unpackAlignment": "data",
+                    "colorSpace": "data",
+                    "userData": {
+                      "mimeType": "data"
+                    },
+                    "updateRanges": [],
+                    "version": "data",
+                    "onUpdate": "data",
+                    "renderTarget": "data",
+                    "isRenderTargetTexture": "data",
+                    "isArrayTexture": "data",
+                    "pmremVersion": "data",
+                    "normalized": "data"
+                  }
+                },
+                "mapTransform": {
+                  "value": {
+                    "elements": [
+                      "data"
+                    ],
+                    "isMatrix3": "data"
+                  }
+                },
+                "alphaMap": {
+                  "value": "data"
+                },
+                "alphaMapTransform": {
+                  "value": {
+                    "elements": [
+                      "data"
+                    ],
+                    "isMatrix3": "data"
+                  }
+                },
+                "alphaTest": {
+                  "value": "data"
+                },
+                "normalMap": {
+                  "value": {
+                    "isTexture": "data",
+                    "uuid": "data",
+                    "name": "data",
+                    "source": {
+                      "isSource": "data",
+                      "uuid": "data",
+                      "data": {
+                        "width": "data",
+                        "height": "data"
+                      },
+                      "dataReady": "data",
+                      "version": "data"
+                    },
+                    "mipmaps": [],
+                    "mapping": "data",
+                    "channel": "data",
+                    "wrapS": "data",
+                    "wrapT": "data",
+                    "magFilter": "data",
+                    "minFilter": "data",
+                    "anisotropy": "data",
+                    "format": "data",
+                    "internalFormat": "data",
+                    "type": "data",
+                    "offset": {
+                      "x": "data",
+                      "y": "data",
+                      "isVector2": "data"
+                    },
+                    "repeat": {
+                      "x": "data",
+                      "y": "data",
+                      "isVector2": "data"
+                    },
+                    "center": {
+                      "x": "data",
+                      "y": "data",
+                      "isVector2": "data"
+                    },
+                    "rotation": "data",
+                    "matrixAutoUpdate": "data",
+                    "matrix": {
+                      "elements": [
+                        "data"
+                      ],
+                      "isMatrix3": "data"
+                    },
+                    "generateMipmaps": "data",
+                    "premultiplyAlpha": "data",
+                    "flipY": "data",
+                    "unpackAlignment": "data",
+                    "colorSpace": "data",
+                    "userData": {
+                      "mimeType": "data"
+                    },
+                    "updateRanges": [],
+                    "version": "data",
+                    "onUpdate": "data",
+                    "renderTarget": "data",
+                    "isRenderTargetTexture": "data",
+                    "isArrayTexture": "data",
+                    "pmremVersion": "data",
+                    "normalized": "data"
+                  }
+                },
+                "normalMapTransform": {
+                  "value": {
+                    "elements": [
+                      "data"
+                    ],
+                    "isMatrix3": "data"
+                  }
+                },
+                "normalScale": {
+                  "value": {
+                    "x": "data",
+                    "y": "data",
+                    "isVector2": "data"
+                  }
+                },
+                "emissiveMap": {
+                  "value": {
+                    "isTexture": "data",
+                    "uuid": "data",
+                    "name": "data",
+                    "source": {
+                      "isSource": "data",
+                      "uuid": "data",
+                      "data": {
+                        "width": "data",
+                        "height": "data"
+                      },
+                      "dataReady": "data",
+                      "version": "data"
+                    },
+                    "mipmaps": [],
+                    "mapping": "data",
+                    "channel": "data",
+                    "wrapS": "data",
+                    "wrapT": "data",
+                    "magFilter": "data",
+                    "minFilter": "data",
+                    "anisotropy": "data",
+                    "format": "data",
+                    "internalFormat": "data",
+                    "type": "data",
+                    "offset": {
+                      "x": "data",
+                      "y": "data",
+                      "isVector2": "data"
+                    },
+                    "repeat": {
+                      "x": "data",
+                      "y": "data",
+                      "isVector2": "data"
+                    },
+                    "center": {
+                      "x": "data",
+                      "y": "data",
+                      "isVector2": "data"
+                    },
+                    "rotation": "data",
+                    "matrixAutoUpdate": "data",
+                    "matrix": {
+                      "elements": [
+                        "data"
+                      ],
+                      "isMatrix3": "data"
+                    },
+                    "generateMipmaps": "data",
+                    "premultiplyAlpha": "data",
+                    "flipY": "data",
+                    "unpackAlignment": "data",
+                    "colorSpace": "data",
+                    "userData": {
+                      "mimeType": "data"
+                    },
+                    "updateRanges": [],
+                    "version": "data",
+                    "onUpdate": "data",
+                    "renderTarget": "data",
+                    "isRenderTargetTexture": "data",
+                    "isArrayTexture": "data",
+                    "pmremVersion": "data",
+                    "normalized": "data"
+                  }
+                },
+                "emissiveMapTransform": {
+                  "value": {
+                    "elements": [
+                      "data"
+                    ],
+                    "isMatrix3": "data"
+                  }
+                },
+                "fogDensity": {
+                  "value": "data"
+                },
+                "fogNear": {
+                  "value": "data"
+                },
+                "fogFar": {
+                  "value": "data"
+                },
+                "fogColor": {
+                  "value": {
+                    "isColor": "data",
+                    "r": "data",
+                    "g": "data",
+                    "b": "data"
+                  }
+                },
+                "ambientLightColor": {
+                  "value": []
+                },
+                "lightProbe": {
+                  "value": []
+                },
+                "directionalLights": {
+                  "value": [],
+                  "properties": {
+                    "direction": {},
+                    "color": {}
+                  }
+                },
+                "directionalLightShadows": {
+                  "value": [],
+                  "properties": {
+                    "shadowIntensity": "data",
+                    "shadowBias": {},
+                    "shadowNormalBias": {},
+                    "shadowRadius": {},
+                    "shadowMapSize": {}
+                  }
+                },
+                "directionalShadowMatrix": {
+                  "value": []
+                },
+                "spotLights": {
+                  "value": [],
+                  "properties": {
+                    "color": {},
+                    "position": {},
+                    "direction": {},
+                    "distance": {},
+                    "coneCos": {},
+                    "penumbraCos": {},
+                    "decay": {}
+                  }
+                },
+                "spotLightShadows": {
+                  "value": [],
+                  "properties": {
+                    "shadowIntensity": "data",
+                    "shadowBias": {},
+                    "shadowNormalBias": {},
+                    "shadowRadius": {},
+                    "shadowMapSize": {}
+                  }
+                },
+                "spotLightMap": {
+                  "value": []
+                },
+                "spotLightMatrix": {
+                  "value": []
+                },
+                "pointLights": {
+                  "value": [],
+                  "properties": {
+                    "color": {},
+                    "position": {},
+                    "decay": {},
+                    "distance": {}
+                  }
+                },
+                "pointLightShadows": {
+                  "value": [],
+                  "properties": {
+                    "shadowIntensity": "data",
+                    "shadowBias": {},
+                    "shadowNormalBias": {},
+                    "shadowRadius": {},
+                    "shadowMapSize": {},
+                    "shadowCameraNear": {},
+                    "shadowCameraFar": {}
+                  }
+                },
+                "pointShadowMatrix": {
+                  "value": []
+                },
+                "hemisphereLights": {
+                  "value": [],
+                  "properties": {
+                    "direction": {},
+                    "skyColor": {},
+                    "groundColor": {}
+                  }
+                },
+                "rectAreaLights": {
+                  "value": [],
+                  "properties": {
+                    "color": {},
+                    "position": {},
+                    "width": {},
+                    "height": {}
+                  }
+                },
+                "ltc_1": {
+                  "value": "data"
+                },
+                "ltc_2": {
+                  "value": "data"
+                },
+                "probesSH": {
+                  "value": "data"
+                },
+                "probesMin": {
+                  "value": {
+                    "x": "data",
+                    "y": "data",
+                    "z": "data",
+                    "isVector3": "data"
+                  }
+                },
+                "probesMax": {
+                  "value": {
+                    "x": "data",
+                    "y": "data",
+                    "z": "data",
+                    "isVector3": "data"
+                  }
+                },
+                "probesResolution": {
+                  "value": {
+                    "x": "data",
+                    "y": "data",
+                    "z": "data",
+                    "isVector3": "data"
+                  }
+                },
+                "litFactor": {
+                  "value": {
+                    "isColor": "data",
+                    "r": "data",
+                    "g": "data",
+                    "b": "data"
+                  }
+                },
+                "mapUvTransform": {
+                  "value": {
+                    "elements": [
+                      "data"
+                    ],
+                    "isMatrix3": "data"
+                  }
+                },
+                "colorAlpha": {
+                  "value": "data"
+                },
+                "normalMapUvTransform": {
+                  "value": {
+                    "elements": [
+                      "data"
+                    ],
+                    "isMatrix3": "data"
+                  }
+                },
+                "shadeColorFactor": {
+                  "value": {
+                    "isColor": "data",
+                    "r": "data",
+                    "g": "data",
+                    "b": "data"
+                  }
+                },
+                "shadeMultiplyTexture": {
+                  "value": {
+                    "isTexture": "data",
+                    "uuid": "data",
+                    "name": "data",
+                    "source": "circular",
+                    "mipmaps": [],
+                    "mapping": "data",
+                    "channel": "data",
+                    "wrapS": "data",
+                    "wrapT": "data",
+                    "magFilter": "data",
+                    "minFilter": "data",
+                    "anisotropy": "data",
+                    "format": "data",
+                    "internalFormat": "data",
+                    "type": "data",
+                    "offset": {
+                      "x": "data",
+                      "y": "data",
+                      "isVector2": "data"
+                    },
+                    "repeat": {
+                      "x": "data",
+                      "y": "data",
+                      "isVector2": "data"
+                    },
+                    "center": {
+                      "x": "data",
+                      "y": "data",
+                      "isVector2": "data"
+                    },
+                    "rotation": "data",
+                    "matrixAutoUpdate": "data",
+                    "matrix": {
+                      "elements": [
+                        "data"
+                      ],
+                      "isMatrix3": "data"
+                    },
+                    "generateMipmaps": "data",
+                    "premultiplyAlpha": "data",
+                    "flipY": "data",
+                    "unpackAlignment": "data",
+                    "colorSpace": "data",
+                    "userData": {
+                      "mimeType": "data"
+                    },
+                    "updateRanges": [],
+                    "version": "data",
+                    "onUpdate": "data",
+                    "renderTarget": "data",
+                    "isRenderTargetTexture": "data",
+                    "isArrayTexture": "data",
+                    "pmremVersion": "data",
+                    "normalized": "data"
+                  }
+                },
+                "shadeMultiplyTextureUvTransform": {
+                  "value": {
+                    "elements": [
+                      "data"
+                    ],
+                    "isMatrix3": "data"
+                  }
+                },
+                "shadingShiftFactor": {
+                  "value": "data"
+                },
+                "shadingShiftTexture": {
+                  "value": "data"
+                },
+                "shadingShiftTextureUvTransform": {
+                  "value": {
+                    "elements": [
+                      "data"
+                    ],
+                    "isMatrix3": "data"
+                  }
+                },
+                "shadingShiftTextureScale": {
+                  "value": "data"
+                },
+                "shadingToonyFactor": {
+                  "value": "data"
+                },
+                "giEqualizationFactor": {
+                  "value": "data"
+                },
+                "matcapFactor": {
+                  "value": {
+                    "isColor": "data",
+                    "r": "data",
+                    "g": "data",
+                    "b": "data"
+                  }
+                },
+                "matcapTexture": {
+                  "value": {
+                    "isTexture": "data",
+                    "uuid": "data",
+                    "name": "data",
+                    "source": "circular",
+                    "mipmaps": [],
+                    "mapping": "data",
+                    "channel": "data",
+                    "wrapS": "data",
+                    "wrapT": "data",
+                    "magFilter": "data",
+                    "minFilter": "data",
+                    "anisotropy": "data",
+                    "format": "data",
+                    "internalFormat": "data",
+                    "type": "data",
+                    "offset": {
+                      "x": "data",
+                      "y": "data",
+                      "isVector2": "data"
+                    },
+                    "repeat": {
+                      "x": "data",
+                      "y": "data",
+                      "isVector2": "data"
+                    },
+                    "center": {
+                      "x": "data",
+                      "y": "data",
+                      "isVector2": "data"
+                    },
+                    "rotation": "data",
+                    "matrixAutoUpdate": "data",
+                    "matrix": {
+                      "elements": [
+                        "data"
+                      ],
+                      "isMatrix3": "data"
+                    },
+                    "generateMipmaps": "data",
+                    "premultiplyAlpha": "data",
+                    "flipY": "data",
+                    "unpackAlignment": "data",
+                    "colorSpace": "data",
+                    "userData": {
+                      "mimeType": "data"
+                    },
+                    "updateRanges": [],
+                    "version": "data",
+                    "onUpdate": "data",
+                    "renderTarget": "data",
+                    "isRenderTargetTexture": "data",
+                    "isArrayTexture": "data",
+                    "pmremVersion": "data",
+                    "normalized": "data"
+                  }
+                },
+                "matcapTextureUvTransform": {
+                  "value": {
+                    "elements": [
+                      "data"
+                    ],
+                    "isMatrix3": "data"
+                  }
+                },
+                "parametricRimColorFactor": {
+                  "value": {
+                    "isColor": "data",
+                    "r": "data",
+                    "g": "data",
+                    "b": "data"
+                  }
+                },
+                "rimMultiplyTexture": {
+                  "value": "data"
+                },
+                "rimMultiplyTextureUvTransform": {
+                  "value": {
+                    "elements": [
+                      "data"
+                    ],
+                    "isMatrix3": "data"
+                  }
+                },
+                "rimLightingMixFactor": {
+                  "value": "data"
+                },
+                "parametricRimFresnelPowerFactor": {
+                  "value": "data"
+                },
+                "parametricRimLiftFactor": {
+                  "value": "data"
+                },
+                "emissive": {
+                  "value": {
+                    "isColor": "data",
+                    "r": "data",
+                    "g": "data",
+                    "b": "data"
+                  }
+                },
+                "emissiveIntensity": {
+                  "value": "data"
+                },
+                "emissiveMapUvTransform": {
+                  "value": {
+                    "elements": [
+                      "data"
+                    ],
+                    "isMatrix3": "data"
+                  }
+                },
+                "outlineWidthMultiplyTexture": {
+                  "value": "data"
+                },
+                "outlineWidthMultiplyTextureUvTransform": {
+                  "value": {
+                    "elements": [
+                      "data"
+                    ],
+                    "isMatrix3": "data"
+                  }
+                },
+                "outlineWidthFactor": {
+                  "value": "data"
+                },
+                "outlineColorFactor": {
+                  "value": {
+                    "isColor": "data",
+                    "r": "data",
+                    "g": "data",
+                    "b": "data"
+                  }
+                },
+                "outlineLightingMixFactor": {
+                  "value": "data"
+                },
+                "uvAnimationMaskTexture": {
+                  "value": "data"
+                },
+                "uvAnimationMaskTextureUvTransform": {
+                  "value": {
+                    "elements": [
+                      "data"
+                    ],
+                    "isMatrix3": "data"
+                  }
+                },
+                "uvAnimationScrollXOffset": {
+                  "value": "data"
+                },
+                "uvAnimationScrollYOffset": {
+                  "value": "data"
+                },
+                "uvAnimationRotationPhase": {
+                  "value": "data"
+                }
+              },
+              "uniformsGroups": [],
+              "vertexShader": "data",
+              "fragmentShader": "data",
+              "linewidth": "data",
+              "wireframe": "data",
+              "wireframeLinewidth": "data",
+              "fog": "data",
+              "lights": "data",
+              "clipping": "data",
+              "extensions": {
+                "clipCullDistance": "data",
+                "multiDraw": "data"
+              },
+              "defaultAttributeValues": {
+                "color": [
+                  "data"
+                ],
+                "uv": [
+                  "data"
+                ],
+                "uv1": [
+                  "data"
+                ]
+              },
+              "index0AttributeName": "data",
+              "uniformsNeedUpdate": "data",
+              "glslVersion": "data",
+              "uvAnimationScrollXSpeedFactor": "data",
+              "uvAnimationScrollYSpeedFactor": "data",
+              "uvAnimationRotationSpeedFactor": "data",
+              "normalMapType": "data"
+            },
+            "morphTargetDictionary": {
+              "Fcl_ALL_Neutral": "data",
+              "Fcl_ALL_Angry": "data",
+              "Fcl_ALL_Fun": "data",
+              "Fcl_ALL_Joy": "data",
+              "Fcl_ALL_Sorrow": "data",
+              "Fcl_ALL_Surprised": "data",
+              "Fcl_BRW_Angry": "data",
+              "Fcl_BRW_Fun": "data",
+              "Fcl_BRW_Joy": "data",
+              "Fcl_BRW_Sorrow": "data",
+              "Fcl_BRW_Surprised": "data",
+              "Fcl_EYE_Natural": "data",
+              "Fcl_EYE_Angry": "data",
+              "Fcl_EYE_Close": "data",
+              "Fcl_EYE_Close_R": "data",
+              "Fcl_EYE_Close_L": "data",
+              "Fcl_EYE_Fun": "data",
+              "Fcl_EYE_Joy": "data",
+              "Fcl_EYE_Joy_R": "data",
+              "Fcl_EYE_Joy_L": "data",
+              "Fcl_EYE_Sorrow": "data",
+              "Fcl_EYE_Surprised": "data",
+              "Fcl_EYE_Spread": "data",
+              "Fcl_EYE_Iris_Hide": "data",
+              "Fcl_EYE_Highlight_Hide": "data",
+              "Fcl_MTH_Close": "data",
+              "Fcl_MTH_Up": "data",
+              "Fcl_MTH_Down": "data",
+              "Fcl_MTH_Angry": "data",
+              "Fcl_MTH_Small": "data",
+              "Fcl_MTH_Large": "data",
+              "Fcl_MTH_Neutral": "data",
+              "Fcl_MTH_Fun": "data",
+              "Fcl_MTH_Joy": "data",
+              "Fcl_MTH_Sorrow": "data",
+              "Fcl_MTH_Surprised": "data",
+              "Fcl_MTH_SkinFung": "data",
+              "Fcl_MTH_SkinFung_R": "data",
+              "Fcl_MTH_SkinFung_L": "data",
+              "Fcl_MTH_A": "data",
+              "Fcl_MTH_I": "data",
+              "Fcl_MTH_U": "data",
+              "Fcl_MTH_E": "data",
+              "Fcl_MTH_O": "data",
+              "Fcl_HA_Hide": "data",
+              "Fcl_HA_Fung1": "data",
+              "Fcl_HA_Fung1_Low": "data",
+              "Fcl_HA_Fung1_Up": "data",
+              "Fcl_HA_Fung2": "data",
+              "Fcl_HA_Fung2_Low": "data",
+              "Fcl_HA_Fung2_Up": "data",
+              "Fcl_HA_Fung3": "data",
+              "Fcl_HA_Fung3_Up": "data",
+              "Fcl_HA_Fung3_Low": "data",
+              "Fcl_HA_Short": "data",
+              "Fcl_HA_Short_Up": "data",
+              "Fcl_HA_Short_Low": "data"
+            },
+            "morphTargetInfluences": [
+              "data"
+            ],
+            "count": "data",
+            "isSkinnedMesh": "data",
+            "bindMode": "data",
+            "bindMatrix": {
+              "elements": [
+                "data"
+              ],
+              "isMatrix4": "data"
+            },
+            "bindMatrixInverse": {
+              "elements": [
+                "data"
+              ],
+              "isMatrix4": "data"
+            },
+            "boundingBox": "data",
+            "boundingSphere": "data",
+            "skeleton": {
+              "uuid": "data",
+              "bones": [
+                {
+                  "isObject3D": "data",
+                  "uuid": "data",
+                  "name": "data",
+                  "type": "data",
+                  "children": [
+                    {
+                      "isObject3D": "data",
+                      "uuid": "data",
+                      "name": "data",
+                      "type": "data",
+                      "children": [],
+                      "up": {
+                        "x": "data",
+                        "y": "data",
+                        "z": "data",
+                        "isVector3": "data"
+                      },
+                      "position": {
+                        "x": "data",
+                        "y": "data",
+                        "z": "data",
+                        "isVector3": "data"
+                      },
+                      "rotation": {
+                        "isEuler": "data"
+                      },
+                      "quaternion": {
+                        "isQuaternion": "data"
+                      },
+                      "scale": {
+                        "x": "data",
+                        "y": "data",
+                        "z": "data",
+                        "isVector3": "data"
+                      },
+                      "matrix": {
+                        "elements": [
+                          "data"
+                        ],
+                        "isMatrix4": "data"
+                      },
+                      "matrixWorld": {
+                        "elements": [
+                          "data"
+                        ],
+                        "isMatrix4": "data"
+                      },
+                      "matrixAutoUpdate": "data",
+                      "matrixWorldAutoUpdate": "data",
+                      "matrixWorldNeedsUpdate": "data",
+                      "layers": {
+                        "mask": "data"
+                      },
+                      "visible": "data",
+                      "castShadow": "data",
+                      "receiveShadow": "data",
+                      "frustumCulled": "data",
+                      "renderOrder": "data",
+                      "animations": [],
+                      "customDepthMaterial": "data",
+                      "customDistanceMaterial": "data",
+                      "static": "data",
+                      "userData": {
+                        "name": "data"
+                      },
+                      "pivot": "data",
+                      "isBone": "data"
+                    }
+                  ],
+                  "up": {
+                    "x": "data",
+                    "y": "data",
+                    "z": "data",
+                    "isVector3": "data"
+                  },
+                  "position": {
+                    "x": "data",
+                    "y": "data",
+                    "z": "data",
+                    "isVector3": "data"
+                  },
+                  "rotation": {
+                    "isEuler": "data"
+                  },
+                  "quaternion": {
+                    "isQuaternion": "data"
+                  },
+                  "scale": {
+                    "x": "data",
+                    "y": "data",
+                    "z": "data",
+                    "isVector3": "data"
+                  },
+                  "matrix": {
+                    "elements": [
+                      "data"
+                    ],
+                    "isMatrix4": "data"
+                  },
+                  "matrixWorld": {
+                    "elements": [
+                      "data"
+                    ],
+                    "isMatrix4": "data"
+                  },
+                  "matrixAutoUpdate": "data",
+                  "matrixWorldAutoUpdate": "data",
+                  "matrixWorldNeedsUpdate": "data",
+                  "layers": {
+                    "mask": "data"
+                  },
+                  "visible": "data",
+                  "castShadow": "data",
+                  "receiveShadow": "data",
+                  "frustumCulled": "data",
+                  "renderOrder": "data",
+                  "animations": [],
+                  "customDepthMaterial": "data",
+                  "customDistanceMaterial": "data",
+                  "static": "data",
+                  "userData": {
+                    "name": "data"
+                  },
+                  "pivot": "data",
+                  "isBone": "data"
+                }
+              ],
+              "boneInverses": [
+                {
+                  "elements": [
+                    "data"
+                  ],
+                  "isMatrix4": "data"
+                }
+              ],
+              "boneMatrices": {
+                "0": "data",
+                "1": "data",
+                "2": "data",
+                "3": "data",
+                "4": "data",
+                "5": "data",
+                "6": "data",
+                "7": "data",
+                "8": "data",
+                "9": "data",
+                "10": "data",
+                "11": "data",
+                "12": "data",
+                "13": "data",
+                "14": "data",
+                "15": "data",
+                "16": "data",
+                "17": "data",
+                "18": "data",
+                "19": "data",
+                "20": "data",
+                "21": "data",
+                "22": "data",
+                "23": "data",
+                "24": "data",
+                "25": "data",
+                "26": "data",
+                "27": "data",
+                "28": "data",
+                "29": "data",
+                "30": "data",
+                "31": "data",
+                "32": "data",
+                "33": "data",
+                "34": "data",
+                "35": "data",
+                "36": "data",
+                "37": "data",
+                "38": "data",
+                "39": "data",
+                "40": "data",
+                "41": "data",
+                "42": "data",
+                "43": "data",
+                "44": "data",
+                "45": "data",
+                "46": "data",
+                "47": "data",
+                "48": "data",
+                "49": "data",
+                "50": "data",
+                "51": "data",
+                "52": "data",
+                "53": "data",
+                "54": "data",
+                "55": "data",
+                "56": "data",
+                "57": "data",
+                "58": "data",
+                "59": "data",
+                "60": "data",
+                "61": "data",
+                "62": "data",
+                "63": "data"
+              },
+              "previousBoneMatrices": "data",
+              "boneTexture": "data"
+            }
+          }
+        ],
+        "type": "data"
+      }
+    ]
+  },
+  "lookAt": {
+    "offsetFromHeadBone": {
+      "x": "data",
+      "y": "data",
+      "z": "data",
+      "isVector3": "data"
+    },
+    "autoUpdate": "data",
+    "faceFront": {
+      "x": "data",
+      "y": "data",
+      "z": "data",
+      "isVector3": "data"
+    },
+    "humanoid": "circular",
+    "applier": {
+      "humanoid": "circular",
+      "rangeMapHorizontalInner": {
+        "inputMaxValue": "data",
+        "outputScale": "data"
+      },
+      "rangeMapHorizontalOuter": {
+        "inputMaxValue": "data",
+        "outputScale": "data"
+      },
+      "rangeMapVerticalDown": {
+        "inputMaxValue": "data",
+        "outputScale": "data"
+      },
+      "rangeMapVerticalUp": {
+        "inputMaxValue": "data",
+        "outputScale": "data"
+      },
+      "faceFront": {
+        "x": "data",
+        "y": "data",
+        "z": "data",
+        "isVector3": "data"
+      }
+    }
+  },
+  "materials": [
+    "circular"
+  ],
+  "springBoneManager": {},
+  "nodeConstraintManager": "data"
+}
