@@ -1,18 +1,29 @@
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
-from fastapi.responses import HTMLResponse
+from pydantic import BaseModel
 from websocket.util import ConnectionManager
 from fastapi.middleware.cors import CORSMiddleware
+import json
+from helpers.agent import Agent
+from helpers.speak import speak_async
 
 app = FastAPI()
 manager = ConnectionManager()
+agent = Agent()
+voice = "en-GB-RyanNeural"
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # In production, change this to your frontend URL (e.g., ["http://localhost:3000"])
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+class Event(BaseModel):
+    data: dict
+    event: str
+
 
 @app.websocket("/ws/{client_id}")
 async def websocket_endpoint(websocket: WebSocket, client_id: str):
@@ -22,7 +33,19 @@ async def websocket_endpoint(websocket: WebSocket, client_id: str):
         # await manager.broadcast(f"Client {client_id} joined. Active connections: {manager.get_active_connections_count()}")
         while True:
             data = await websocket.receive_text()
-            await manager.broadcast(f"{data}")
+            E = Event(**json.loads(data))
+
+            # check event
+            if (E.event == "agent"):
+                print(f"agent is working on {E.data["text"]}")
+
+                # call agent
+                res = agent.run_agent(E.data["text"])
+
+                # speak async
+                speak_async(res, voice, manager, websocket)
+
+
     except WebSocketDisconnect:
         await manager.disconnect(websocket)
         await manager.broadcast(f"Client {client_id} left. Active connections: {manager.get_active_connections_count()}")

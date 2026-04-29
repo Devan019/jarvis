@@ -6,8 +6,65 @@ import { JarvisFunctions } from "./JarvisFunctions";
 import { TimeDate } from "./TimeDate";
 import { Subtitles } from "./Subtitles";
 import { ConnectionStatus } from "./ConnectionStatus";
+import { SocketMessage, useSocket } from "../context/SocketContext";
+import { useEffect } from "react";
+
+const FILLER_AUDIOS = [
+  "/sample/give_me_moment.mp3",
+  "/sample/just_sec.mp3",
+  "/sample/let_check.mp3",
+  "/sample/working_on_it.mp3",
+];
+
 
 export function Dashboard() {
+  const { send, isConnected, receive } = useSocket();
+
+  // 1. Listen for user speech and send to backend
+  useEffect(() => {
+    const handleUserSpeech = (event: Event) => {
+      const customEvent = event as CustomEvent<string>;
+      const text = customEvent.detail;
+
+      if (isConnected) {
+        send({
+          event: "agent",
+          data: { text: text }
+        });
+
+        const randomFiller = FILLER_AUDIOS[Math.floor(Math.random() * FILLER_AUDIOS.length)];
+        window.dispatchEvent(
+          new CustomEvent("jarvis-play-filler", { detail: randomFiller })
+        );
+      }
+    };
+
+    window.addEventListener("jarvis-user-speech", handleUserSpeech);
+    return () => window.removeEventListener("jarvis-user-speech", handleUserSpeech);
+  }, [isConnected, send]);
+
+  // 2. Listen for incoming TTS audio and dispatch to the Avatar
+  useEffect(() => {
+    const cleanup = receive((message: SocketMessage) => {
+      if (message.event === "tts_chunk") {
+        
+        window.dispatchEvent(new CustomEvent("jarvis-stop-filler"));
+        // Decode Base64 to ArrayBuffer
+        const binaryString = atob(message.data);
+        const bytes = new Uint8Array(binaryString.length);
+        for (let i = 0; i < binaryString.length; i++) {
+          bytes[i] = binaryString.charCodeAt(i);
+        }
+
+        // Send to Avatar component seamlessly
+        window.dispatchEvent(
+          new CustomEvent("jarvis-audio-chunk", { detail: bytes.buffer })
+        );
+      }
+    });
+
+    return () => cleanup();
+  }, [receive]);
   return (
     <div className="w-full h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
       {/* Grid Background */}

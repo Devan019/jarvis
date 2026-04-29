@@ -5,15 +5,15 @@ import os
 def get_valid_creds():
     creds = None
 
-    if os.path.exists("token.json"):
-        creds = Credentials.from_authorized_user_file("token.json")
+    if os.path.exists("cred/token.json"):
+        creds = Credentials.from_authorized_user_file("cred/token.json")
 
     # If token expired → refresh automatically
     if creds and creds.expired and creds.refresh_token:
         creds.refresh(Request())
 
         # save updated token
-        with open("token.json", "w") as token:
+        with open("cred/token.json", "w") as token:
             token.write(creds.to_json())
 
     return creds

@@ -4,12 +4,9 @@ import { useSocket } from "../context/SocketContext";
 import { useEffect, useState } from "react";
 
 export function ConnectionStatus() {
-  const { isConnected, clientId } = useSocket();
+  const { isConnected } = useSocket();
   const [displayId, setDisplayId] = useState("");
 
-  useEffect(() => {
-    setDisplayId(clientId.substring(0, 12) + "...");
-  }, [clientId]);
 
   return (
     <div className="fixed bottom-6 left-6 z-50">

@@ -13,13 +13,13 @@ export function useSpeechRecognition() {
   const [interimTranscript, setInterimTranscript] = useState("");
   const [transcripts, setTranscripts] = useState<TranscriptItem[]>([]);
 
-  const transcriptRef = useRef(""); 
+  const transcriptRef = useRef("");
   const recognitionRef = useRef<any>(null);
   const shouldKeepListeningRef = useRef(false);
   const hasAutoStartedRef = useRef(false);
-  
+  const isJarvisSpeakingRef = useRef(false);
 
-  // --- Silence Tracking ---
+  //  Silence Tracking
   const lastSpeechTimeRef = useRef<number>(Date.now());
   const hasUnprocessedSpeechRef = useRef<boolean>(false);
   const restartTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -28,17 +28,17 @@ export function useSpeechRecognition() {
   useEffect(() => {
     const watchdog = setInterval(() => {
       // Only run if we are actively listening and have text waiting
-      if (shouldKeepListeningRef.current && hasUnprocessedSpeechRef.current) {
-        
+      if (shouldKeepListeningRef.current && hasUnprocessedSpeechRef.current && !isJarvisSpeakingRef.current) {
+
         const timeSinceLastSpeech = Date.now() - lastSpeechTimeRef.current;
-        
+
         // If 3 seconds (3000ms) have passed
         if (timeSinceLastSpeech >= 3000) {
           const finalSpokenText = transcriptRef.current.trim();
-          
+
           if (finalSpokenText) {
             console.log("🎙️ Data captured after 3s pause:", finalSpokenText);
-            
+
             // Dispatch to Jarvis
             window.dispatchEvent(
               new CustomEvent("jarvis-user-speech", { detail: finalSpokenText })
@@ -63,6 +63,31 @@ export function useSpeechRecognition() {
       restartTimeoutRef.current = null;
     }
   }, []);
+
+  useEffect(() => {
+    const handleJarvisSpeaking = (event: Event) => {
+      const customEvent = event as CustomEvent<boolean>;
+      const isSpeaking = customEvent.detail;
+
+      isJarvisSpeakingRef.current = isSpeaking;
+
+      if (isSpeaking) {
+        // Jarvis started talking. Stop the mic to prevent feedback.
+        if (recognitionRef.current && isListening) {
+          recognitionRef.current.stop();
+          clearRestartTimeout();
+        }
+      } else {
+        // Jarvis finished talking. Turn the mic back on if we were in "listening" mode.
+        if (shouldKeepListeningRef.current && recognitionRef.current) {
+          try { recognitionRef.current.start(); } catch { }
+        }
+      }
+    };
+
+    window.addEventListener("jarvis-is-speaking", handleJarvisSpeaking);
+    return () => window.removeEventListener("jarvis-is-speaking", handleJarvisSpeaking);
+  }, [isListening, clearRestartTimeout]);
 
   const appendFinalTranscript = useCallback((text: string) => {
     const trimmedText = text.trim();
@@ -133,7 +158,7 @@ export function useSpeechRecognition() {
       clearRestartTimeout();
       restartTimeoutRef.current = setTimeout(() => {
         if (!recognitionRef.current || !shouldKeepListeningRef.current) return;
-        try { recognitionRef.current.start(); } catch {}
+        try { recognitionRef.current.start(); } catch { }
       }, 250);
     };
 
@@ -168,7 +193,7 @@ export function useSpeechRecognition() {
       hasUnprocessedSpeechRef.current = false;
       lastSpeechTimeRef.current = Date.now(); // Reset timer
       setIsListening(true);
-      try { recognitionRef.current.start(); } catch {}
+      try { recognitionRef.current.start(); } catch { }
     }
   }, [isListening]);
 

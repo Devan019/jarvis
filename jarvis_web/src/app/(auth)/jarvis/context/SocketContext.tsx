@@ -2,98 +2,76 @@
 
 import React, { createContext, useContext, useEffect, useRef, useState } from "react";
 
+export interface SocketMessage {
+  event: string;
+  data: any;
+}
+
+type SocketMessageHandler = (message: SocketMessage) => void;
+
 interface SocketContextType {
-  socket: WebSocket | null;
   isConnected: boolean;
-  clientId: string;
-  send: (message: any) => void;
+  send: (message: SocketMessage) => void;
+  receive: (handler: SocketMessageHandler) => () => void;
 }
 
 const SocketContext = createContext<SocketContextType | undefined>(undefined);
 
 export function SocketProvider({ children }: { children: React.ReactNode }) {
+  const socketUrl = process.env.NEXT_PUBLIC_WEBSOCKET_URL;
+
+  if(!socketUrl){
+    throw new Error("NEXT_PUBLIC_WEBSOCKET_URL environment variable is not defined");
+  }
+
   const [socket, setSocket] = useState<WebSocket | null>(null);
   const [isConnected, setIsConnected] = useState(false);
-  const [clientId, setClientId] = useState("");
+  
+  const handlersRef = useRef<Set<SocketMessageHandler>>(new Set());
 
   useEffect(() => {
-    // Generate or retrieve client UUID
     let uuid = localStorage.getItem("jarvis-client-id");
     if (!uuid) {
       uuid = `jarvis-${Date.now()}-${Math.random().toString(36).substring(2, 11)}`;
       localStorage.setItem("jarvis-client-id", uuid);
     }
-    setClientId(uuid);
+    const ws = new WebSocket(`${socketUrl}/${uuid}`);
 
-    // Connect to WebSocket
-    const ws = new WebSocket(`ws://localhost:8000/ws/${uuid}`);
-
-    ws.onopen = () => {
-      console.log("WebSocket connected");
-      setIsConnected(true);
-
-      // Send client UUID on connection
-      ws.send(
-        JSON.stringify({
-          type: "init",
-          clientId: uuid,
-          timestamp: new Date().toISOString(),
-        })
-      );
-    };
-
+    ws.onopen = () => setIsConnected(true);
+    ws.onclose = () => setIsConnected(false);
+    
     ws.onmessage = (event) => {
-      console.log("WebSocket message get:", event.data);
       try {
-        const data = JSON.parse(event.data);
-        // Handle messages from server
-        window.dispatchEvent(
-          new CustomEvent("socket-message", { detail: data })
-        );
+        const parsed = JSON.parse(event.data);
+        handlersRef.current.forEach((handler) => handler(parsed));
       } catch (e) {
-        console.error("Failed to parse socket message:", e);
+        console.error("Failed to parse socket message", e);
       }
-    };
-
-    ws.onerror = (error) => {
-      console.error("WebSocket error:", error);
-      setIsConnected(false);
-    };
-
-    ws.onclose = () => {
-      console.log("WebSocket disconnected");
-      setIsConnected(false);
-      // Attempt to reconnect after 3 seconds
-      setTimeout(() => {
-        console.log("Attempting to reconnect...");
-      }, 3000);
     };
 
     setSocket(ws);
 
     return () => {
-      if (ws.readyState === WebSocket.OPEN) {
-        ws.close();
-      }
+      handlersRef.current.clear();
+      ws.close();
     };
   }, []);
 
-  const send = (message: any) => {
-    if (socket && isConnected) {
-      socket.send(
-        JSON.stringify({
-          ...message,
-          clientId,
-          timestamp: new Date().toISOString(),
-        })
-      );
+  const send = (message: SocketMessage) => {
+    if (socket?.readyState === WebSocket.OPEN) {
+      socket.send(JSON.stringify(message));
     } else {
       console.warn("WebSocket is not connected");
     }
   };
 
+  const receive = (handler: SocketMessageHandler) => {
+    handlersRef.current.add(handler);
+    return () => handlersRef.current.delete(handler); 
+  };
+
   return (
-    <SocketContext.Provider value={{ socket, isConnected, clientId, send }}>
+    <SocketContext.Provider value={{ isConnected, send, receive }}>
       {children}
     </SocketContext.Provider>
   );
@@ -101,8 +79,6 @@ export function SocketProvider({ children }: { children: React.ReactNode }) {
 
 export function useSocket() {
   const context = useContext(SocketContext);
-  if (context === undefined) {
-    throw new Error("useSocket must be used within SocketProvider");
-  }
+  if (!context) throw new Error("useSocket must be used within SocketProvider");
   return context;
 }
