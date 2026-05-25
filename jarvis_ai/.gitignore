@@ -16,3 +16,6 @@ cred/
 .env
 
 PyWhatKit_DB.txt
+
+
+todo.json

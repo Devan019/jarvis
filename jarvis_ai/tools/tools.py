@@ -4,7 +4,7 @@ from .spotify import Spotify
 from .yt import Youtube
 from .whatsapp import WhatsApp
 from .google_tool import GoogleTool
-# from .todo import TodoTool
+from .todo import TodoTool
 
 # objects
 weather = Weather()
@@ -13,7 +13,7 @@ spotify = Spotify()
 yt = Youtube()
 wh = WhatsApp()
 gt = GoogleTool()
-# todo = TodoTool()
+todo = TodoTool()
 
 # tool map
 TOOL_MAP = {
@@ -30,12 +30,12 @@ TOOL_MAP = {
     "create_google_meet_and_get_link": gt.googleMeet.create_google_meet_and_get_link,
     "open_meet_browser": gt.googleMeet.open_meet_browser,
 
-    # "open_todo_ui": todo.open_ui,
-    # "close_todo_ui": todo.close_ui,
-    # "add_todo": todo.add_todo,
-    # "remove_todo": todo.remove_todo,
-    # "toggle_todo": todo.toggle_todo,
-    # "get_todos": todo.get_todos
+    "open_todo_ui": todo.open_ui,
+    "close_todo_ui": todo.close_ui,
+    "add_todo": todo.add_todo,
+    "remove_todo": todo.remove_todo,
+    "toggle_todo": todo.toggle_todo,
+    "get_todos": todo.get_todos
 }
 
 
@@ -239,93 +239,93 @@ TOOLS_SCHEMA = [
         }
     },
 
-    # # open todo UI
-    # {
-    #     "type": "function",
-    #     "function": {
-    #         "name": "open_todo_ui",
-    #         "description": "open todo UI window",
-    #         "parameters": {
-    #             "type": "object",
-    #             "properties": {}
-    #         }
-    #     }
-    # },
+    # open todo UI
+    {
+        "type": "function",
+        "function": {
+            "name": "open_todo_ui",
+            "description": "open todo UI window",
+            "parameters": {
+                "type": "object",
+                "properties": {}
+            }
+        }
+    },
 
-    # # close todo UI
-    # {
-    #     "type": "function",
-    #     "function": {
-    #         "name": "close_todo_ui",
-    #         "description": "close todo UI window",
-    #         "parameters": {
-    #             "type": "object",
-    #             "properties": {}
-    #         }
-    #     }
-    # },
+    # close todo UI
+    {
+        "type": "function",
+        "function": {
+            "name": "close_todo_ui",
+            "description": "close todo UI window",
+            "parameters": {
+                "type": "object",
+                "properties": {}
+            }
+        }
+    },
 
-    # # add todo task
-    # {
-    #     "type": "function",
-    #     "function": {
-    #         "name": "add_todo",
-    #         "description": "add a todo task with date, time and text",
-    #         "parameters": {
-    #             "type": "object",
-    #             "properties": {
-    #                 "todo_date": {"type": "string"},
-    #                 "todo_time": {"type": "string"},
-    #                 "todo_text": {"type": "string"}
-    #             },
-    #             "required": ["todo_date", "todo_time", "todo_text"]
-    #         }
-    #     }
-    # },
+    # add todo task
+    {
+        "type": "function",
+        "function": {
+            "name": "add_todo",
+            "description": "add a todo task with date, time and text",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "date": {"type": "string"},
+                    "time": {"type": "string"},
+                    "task": {"type": "string"}
+                },
+                "required": ["date", "time", "task"]
+            }
+        }
+    },
 
-    # # remove todo task by index
-    # {
-    #     "type": "function",
-    #     "function": {
-    #         "name": "remove_todo",
-    #         "description": "remove a todo task by index",
-    #         "parameters": {
-    #             "type": "object",
-    #             "properties": {
-    #                 "index": {"type": "integer"}
-    #             },
-    #             "required": ["index"]
-    #         }
-    #     }
-    # },
+    # remove todo task by index
+    {
+        "type": "function",
+        "function": {
+            "name": "remove_todo",
+            "description": "remove a todo task by index",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "todo_id": {"type": "integer"}
+                },
+                "required": ["todo_id"]
+            }
+        }
+    },
 
-    # # toggle todo task status by index
-    # {
-    #     "type": "function",
-    #     "function": {
-    #         "name": "toggle_todo",
-    #         "description": "toggle done or pending state of a todo by index",
-    #         "parameters": {
-    #             "type": "object",
-    #             "properties": {
-    #                 "index": {"type": "integer"}
-    #             },
-    #             "required": ["index"]
-    #         }
-    #     }
-    # },
+    # toggle todo task status by index
+    {
+        "type": "function",
+        "function": {
+            "name": "toggle_todo",
+            "description": "toggle done or pending state of a todo by index",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "todo_id": {"type": "integer"}
+                },
+                "required": ["todo_id"]
+            }
+        }
+    },
 
-    # # get all todos
-    # {
-    #     "type": "function",
-    #     "function": {
-    #         "name": "get_todos",
-    #         "description": "get all todo tasks",
-    #         "parameters": {
-    #             "type": "object",
-    #             "properties": {}
-    #         }
-    #     }
-    # },
+    # get all todos
+    {
+        "type": "function",
+        "function": {
+            "name": "get_todos",
+            "description": "get all todo tasks",
+            "parameters": {
+                "type": "object",
+                "properties": {}
+            }
+        }
+    },
 
 ]

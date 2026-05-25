@@ -20,6 +20,18 @@ const FILLER_AUDIOS = [
 export function Dashboard() {
   const { send, isConnected, receive } = useSocket();
 
+  // //sample testing
+  // useEffect(() => {
+
+  //   if (isConnected) {
+  //     send({
+  //       event: "agent",
+  //       data: { text: "Add todo of today at 1pm to complete the project and at 2pm to review the documentation" }
+  //     })
+  //   }
+
+  // }, [isConnected, send]);
+
   // 1. Listen for user speech and send to backend
   useEffect(() => {
     const handleUserSpeech = (event: Event) => {
@@ -47,7 +59,7 @@ export function Dashboard() {
   useEffect(() => {
     const cleanup = receive((message: SocketMessage) => {
       if (message.event === "tts_chunk") {
-        
+
         window.dispatchEvent(new CustomEvent("jarvis-stop-filler"));
         // Decode Base64 to ArrayBuffer
         const binaryString = atob(message.data);
@@ -65,6 +77,9 @@ export function Dashboard() {
 
     return () => cleanup();
   }, [receive]);
+
+
+
   return (
     <div className="w-full h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 overflow-hidden">
       {/* Grid Background */}

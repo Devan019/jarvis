@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import json
 from helpers.agent import Agent
 from helpers.speak import speak_async
+import asyncio
 
 app = FastAPI()
 manager = ConnectionManager()
@@ -40,11 +41,22 @@ async def websocket_endpoint(websocket: WebSocket, client_id: str):
                 print(f"agent is working on {E.data["text"]}")
 
                 # call agent
-                res = agent.run_agent(E.data["text"])
+                res = await asyncio.to_thread(agent.run_agent, E.data["text"])
+
+                #response log
+                print(f"agent response: {res}")
+
+                # # temp send
+                # payload = {
+                #     "event": "event",  # You can name this event whatever you like
+                #     "data": "" + res  # The actual text response from your agent
+                # }
+
+                #  Convert the dictionary to a JSON string and send it
+                # await manager.send_personal(websocket, json.dumps(payload))
 
                 # speak async
-                speak_async(res, voice, manager, websocket)
-
+                speak_async(res, voice, manager, websocket)   
 
     except WebSocketDisconnect:
         await manager.disconnect(websocket)

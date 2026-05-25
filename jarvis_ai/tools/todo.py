@@ -1,33 +1,79 @@
-# import subprocess
-# import sys
-# from components.todo.todo_core import TodoCore
+import os
+import subprocess
+import sys
 
+import requests
+import time 
 
-# class TodoTool:
-#     def __init__(self):
-#         self.__tc = TodoCore()
-#         self.process = None
+class TodoTool:
+    def __init__(self):
+        self.__todo_url = "http://localhost:3000/api/todo"
+        self.__todo = "http://localhost:3000/todo"
+        self.__process = None
 
-#     def get_todos(self):
-#         return self.__tc.load_tasks()
+    def __delay(self, seconds):
+        time.sleep(seconds)
 
-#     def remove_todo(self, index):
-#         return self.__tc.remove_task(index)
+    def get_todos(self):
+        try:
+            response = requests.get(self.__todo_url)
+            response.raise_for_status() 
 
-#     def add_todo(self, todo_date, todo_time, todo_text):
-#         return self.__tc.add_task_core(todo_date, todo_time, todo_text)
+            self.__delay(1.5)  
+            return response.json()
+        except requests.exceptions.RequestException as e:
+            return {"error": f"Failed to fetch todos: {e}"}
 
-#     def toggle_todo(self, index):
-#         return self.__tc.toggle_task_core(index)
+    def remove_todo(self, todo_id):
+        try:
+            response = requests.delete(f"{self.__todo_url}/{todo_id}")
+            response.raise_for_status()
+            self.__delay(1.5)  
+            return response.json()
+        except requests.exceptions.RequestException as e:
+            return {"error": f"Failed to delete todo: {e}"}
 
-#     def open_ui(self):
+    def add_todo(self, date=None, time=None, task=""):
+        payload = {"task": task}
+        if date and time:
+            payload["date"] = f"{date} {time}"
+        elif date:
+            payload["date"] = date
+            
+        try:
+            response = requests.post(self.__todo_url, json=payload)
+            self.__delay(1.5)  
+            response.raise_for_status()
+            return response.json()
+        except requests.exceptions.RequestException as e:
+            return {"error": f"Failed to add todo: {e}"}
 
-#         # prevent multiple windows
-#         if self.process is None or self.process.poll() is not None:
-#             self.process = subprocess.Popen(
-#                 [sys.executable, "-m", "components.todo.todo_ui"])
+    def toggle_todo(self, todo_id, completed=True):
+        try:
+            self.__delay(1.5)  
+            response = requests.patch(f"{self.__todo_url}/{todo_id}", json={"completed": completed})
+            response.raise_for_status()
+            return response.json()
+        except requests.exceptions.RequestException as e:
+            return {"error": f"Failed to toggle todo: {e}"}
 
-#     def close_ui(self):
-#         if self.process and self.process.poll() is None:
-#             self.process.terminate()   # closes UI
+    def open_ui(self):
+        if self.__process and self.__process.poll() is None:
+            return {"message": "UI is already running."}
+            
+        script_path = os.path.join(os.path.dirname(__file__), "open_ui.py")
+        self.__process = subprocess.Popen([sys.executable, script_path, self.__todo])
+        self.__delay(3)
+        
+        return {"message": "UI opened successfully."}
 
+    def close_ui(self):
+        try:
+            if self.__process and self.__process.poll() is None:
+                self.__process.terminate()
+                return {"message": "UI closed successfully."}
+            else:
+                return {"message": "UI is not running."}
+                
+        except Exception as e:
+            return {"error": f"Failed to close UI: {str(e)}"}
