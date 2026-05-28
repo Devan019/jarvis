@@ -62,7 +62,7 @@ class TodoTool:
             return {"message": "UI is already running."}
             
         script_path = os.path.join(os.path.dirname(__file__), "open_ui.py")
-        self.__process = subprocess.Popen([sys.executable, script_path, self.__todo])
+        self.__process = subprocess.Popen([sys.executable, script_path, self.__todo, "Jarvis_TODO"])
         self.__delay(3)
         
         return {"message": "UI opened successfully."}

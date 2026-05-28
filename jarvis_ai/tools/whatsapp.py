@@ -5,7 +5,7 @@ from const.mapper import PHONE_NUMBER_MAP
 class WhatsApp:
     
     # send whatsapp message
-    def send_whastapp_message(self, name: str, message: str):
+    def send_whatsapp_message(self, name: str, message: str):
         phone_number = PHONE_NUMBER_MAP.get(name)
 
         if not phone_number:

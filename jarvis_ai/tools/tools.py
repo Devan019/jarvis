@@ -17,7 +17,7 @@ todo = TodoTool()
 
 # tool map
 TOOL_MAP = {
-    "current_weather": weather.getWeather,
+    "current_weather": weather.watherReport,
     "open_app": localapp.open_app,
     "play_spotify_song": spotify.play_spotify_song,
     "play_spotify_playlist": spotify.play_spotify_playlist,
@@ -26,7 +26,7 @@ TOOL_MAP = {
     "get_youtube_video_link": yt.get_youtube_video_link,
     "download_youtube_video": yt.download_youtube_video,
     "download_youtube_audio_only": yt.download_youtube_audio_only,
-    "send_whastapp_message": wh.send_whastapp_message,
+    "send_whatsapp_message": wh.send_whatsapp_message,
     "create_google_meet_and_get_link": gt.googleMeet.create_google_meet_and_get_link,
     "open_meet_browser": gt.googleMeet.open_meet_browser,
 
@@ -47,7 +47,7 @@ TOOLS_SCHEMA = [
         "type": "function",
         "function": {
             "name": "current_weather",
-            "description": "Get current weather of a city",
+            "description": "Get current weather of a location",
             "parameters": {
                 "type": "object",
                 "properties": {
@@ -194,8 +194,8 @@ TOOLS_SCHEMA = [
     {
         "type": "function",
         "function": {
-            "name": "send_whastapp_message",
-            "description": "send whastapp message",
+            "name": "send_whatsapp_message",
+            "description": "send whatsapp message",
             "parameters": {
                 "type": "object",
                 "properties": {

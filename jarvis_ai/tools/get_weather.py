@@ -1,17 +1,17 @@
-import requests
-from const.keys import open_weather_key
-
+import os
+import sys
+import subprocess
 
 class Weather:
     def __init__(self):
-        self.base = "http://api.openweathermap.org/data/2.5/weather"
+        self.url = "http://localhost:3000/weather"
+        self.__process = None
 
-    def getWeather(self, location: str) -> str:
-    
-        # api calling of weather
-        api = requests.get(f"{self.base}?q={location}&appid={open_weather_key}&units=metric")
+    def watherReport(self, location: str) -> str:
+        if self.__process and self.__process.poll() is None:
+            return {"message": "UI is already running."}
+            
+        script_path = os.path.join(os.path.dirname(__file__), "open_ui.py")
+        self.__process = subprocess.Popen([sys.executable, script_path, self.url + f"?location={location}", "Jarvis_Weather"])
         
-        data = api.json()
-
-        #return the data
-        return data
+        return {"message": "UI opened successfully."}
