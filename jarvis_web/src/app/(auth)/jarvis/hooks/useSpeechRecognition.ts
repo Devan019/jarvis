@@ -1,191 +1,159 @@
-import { useEffect, useRef, useState, useCallback } from "react";
+"use client";
 
-interface TranscriptItem {
-  id: number;
-  text: string;
-  isFinal: boolean;
-  timestamp: Date;
-}
+import { useEffect, useRef, useState, useCallback } from "react";
+import {
+  LiveConnectionState,
+  LiveTranscriptionEvent,
+  LiveTranscriptionEvents,
+  useDeepgram,
+} from "../context/DeepgramContext";
+import {
+  MicrophoneEvents,
+  MicrophoneState,
+  useMicrophone,
+} from "../context/MicrophoneContext";
 
 export function useSpeechRecognition() {
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState("");
   const [interimTranscript, setInterimTranscript] = useState("");
-  const [transcripts, setTranscripts] = useState<TranscriptItem[]>([]);
 
-  const transcriptRef = useRef(""); 
-  const recognitionRef = useRef<any>(null);
-  const shouldKeepListeningRef = useRef(false);
-  const hasAutoStartedRef = useRef(false);
-  
+  const { connection, connectToDeepgram, connectionState } = useDeepgram();
+  const { setupMicrophone, microphone, startMicrophone, stopMicrophone, microphoneState } = useMicrophone();
 
-  // --- Silence Tracking ---
+  const accumulatedText = useRef<string>("");
   const lastSpeechTimeRef = useRef<number>(Date.now());
   const hasUnprocessedSpeechRef = useRef<boolean>(false);
-  const restartTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // The Watchdog: Checks every 500ms if 3 seconds have passed since last speech
+  // 1. Initialize microphone on mount
+  useEffect(() => {
+    setupMicrophone();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // 2. Connect to Deepgram once mic is ready
+  useEffect(() => {
+    if (microphoneState === MicrophoneState.Ready) {
+      connectToDeepgram({
+        model: "nova-3",
+        interim_results: true, // Keep true to get fast updates
+        smart_format: true,
+        filler_words: true,
+        utterance_end_ms: 2000, // Detect end of a phrase safely
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [microphoneState]);
+
+  // 3. Watchdog: Checks if 2 seconds of silence passed to fire text to Jarvis
   useEffect(() => {
     const watchdog = setInterval(() => {
-      // Only run if we are actively listening and have text waiting
-      if (shouldKeepListeningRef.current && hasUnprocessedSpeechRef.current) {
-        
+      if (connectionState === LiveConnectionState.OPEN && hasUnprocessedSpeechRef.current) {
         const timeSinceLastSpeech = Date.now() - lastSpeechTimeRef.current;
-        
-        // If 3 seconds (3000ms) have passed
-        if (timeSinceLastSpeech >= 3000) {
-          const finalSpokenText = transcriptRef.current.trim();
-          
+
+        if (timeSinceLastSpeech >= 2000) {
+          const finalSpokenText = accumulatedText.current.trim();
+
           if (finalSpokenText) {
-            console.log("🎙️ Data captured after 3s pause:", finalSpokenText);
+            console.log("🎙️ Sending final text block to Jarvis:", finalSpokenText);
             
-            // Dispatch to Jarvis
+            // Dispatch to Jarvis Event Pipeline
             window.dispatchEvent(
               new CustomEvent("jarvis-user-speech", { detail: finalSpokenText })
             );
 
-            // Reset states for the next sentence
+            // Clean up states for the next utterance window
             setTranscript("");
-            transcriptRef.current = "";
             setInterimTranscript("");
-            hasUnprocessedSpeechRef.current = false; // Mark as processed
+            accumulatedText.current = "";
+            hasUnprocessedSpeechRef.current = false;
           }
         }
       }
-    }, 500);
+    }, 400);
 
     return () => clearInterval(watchdog);
-  }, []);
+  }, [connectionState]);
 
-  const clearRestartTimeout = useCallback(() => {
-    if (restartTimeoutRef.current) {
-      clearTimeout(restartTimeoutRef.current);
-      restartTimeoutRef.current = null;
-    }
-  }, []);
-
-  const appendFinalTranscript = useCallback((text: string) => {
-    const trimmedText = text.trim();
-    if (!trimmedText) return;
-
-    const newTranscriptString = `${transcriptRef.current}${trimmedText} `;
-    transcriptRef.current = newTranscriptString;
-    setTranscript(newTranscriptString);
-
-    const newTranscript: TranscriptItem = {
-      id: Date.now(),
-      text: trimmedText,
-      isFinal: true,
-      timestamp: new Date(),
-    };
-
-    setTranscripts((prev) => [...prev, newTranscript].slice(-3));
-  }, []);
-
+  // 4. Data Streaming and Event Triggers
   useEffect(() => {
-    const speechWindow = window as Window & {
-      SpeechRecognition?: new () => any;
-      webkitSpeechRecognition?: new () => any;
+    if (!microphone || !connection) return;
+
+    const onData = (e: BlobEvent) => {
+      if (e.data.size > 0 && connectionState === LiveConnectionState.OPEN) {
+        connection.send(e.data);
+      }
     };
 
-    const SpeechRecognition = speechWindow.SpeechRecognition ?? speechWindow.webkitSpeechRecognition;
+    const onTranscript = (data: LiveTranscriptionEvent) => {
+      const { is_final: isFinal } = data;
+      let incomingText = data.channel.alternatives[0]?.transcript;
 
-    if (!SpeechRecognition) {
-      console.warn("Speech Recognition API not supported.");
-      return;
+      if (incomingText && incomingText.trim() !== "") {
+        // Human is talking -> update parameters for silence tracker
+        lastSpeechTimeRef.current = Date.now();
+        hasUnprocessedSpeechRef.current = true;
+
+        if (isFinal) {
+          accumulatedText.current = accumulatedText.current
+            ? `${accumulatedText.current} ${incomingText}`
+            : incomingText;
+          setTranscript(accumulatedText.current);
+          setInterimTranscript("");
+        } else {
+          setInterimTranscript(incomingText);
+        }
+      }
+    };
+
+    if (connectionState === LiveConnectionState.OPEN) {
+      connection.addListener(LiveTranscriptionEvents.Transcript, onTranscript);
+      microphone.addEventListener(MicrophoneEvents.DataAvailable, onData);
+      
+      if (microphoneState !== MicrophoneState.Open) {
+        startMicrophone();
+      }
+      setIsListening(true);
     }
-
-    const recognition = new SpeechRecognition();
-    recognitionRef.current = recognition;
-    recognition.continuous = true;
-    recognition.interimResults = true;
-    recognition.lang = "en-US";
-
-    recognition.onstart = () => {
-      setInterimTranscript("");
-    };
-
-    recognition.onresult = (event: any) => {
-      // Every time the mic hears a word, update the timestamp
-      lastSpeechTimeRef.current = Date.now();
-      hasUnprocessedSpeechRef.current = true;
-
-      let interim = "";
-      let finalTranscript = "";
-
-      for (let i = event.resultIndex; i < event.results.length; i++) {
-        const transcriptSegment = event.results[i][0].transcript;
-        if (event.results[i].isFinal) finalTranscript += transcriptSegment + " ";
-        else interim += transcriptSegment;
-      }
-
-      setInterimTranscript(interim);
-      if (finalTranscript) appendFinalTranscript(finalTranscript);
-    };
-
-    recognition.onend = () => {
-      if (!shouldKeepListeningRef.current) {
-        setIsListening(false);
-        return;
-      }
-
-      // Chrome auto-stops after 1.5s of silence. This restarts it instantly.
-      clearRestartTimeout();
-      restartTimeoutRef.current = setTimeout(() => {
-        if (!recognitionRef.current || !shouldKeepListeningRef.current) return;
-        try { recognitionRef.current.start(); } catch {}
-      }, 250);
-    };
 
     return () => {
-      clearRestartTimeout();
-      shouldKeepListeningRef.current = false;
-      if (recognitionRef.current) recognitionRef.current.stop();
+      connection.removeListener(LiveTranscriptionEvents.Transcript, onTranscript);
+      microphone.removeEventListener(MicrophoneEvents.DataAvailable, onData);
     };
-  }, [appendFinalTranscript, clearRestartTimeout]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [connectionState, microphone, connection]);
 
-  // Auto-start
+  // 5. Deepgram Socket KeepAlive
   useEffect(() => {
-    if (hasAutoStartedRef.current || !recognitionRef.current) return;
-    hasAutoStartedRef.current = true;
-    shouldKeepListeningRef.current = true;
-    setIsListening(true);
-    lastSpeechTimeRef.current = Date.now(); // Initialize timer
+    let keepAliveInterval: any;
+    if (!connection) return;
 
-    try { recognitionRef.current.start(); } catch {
-      setIsListening(false);
-      shouldKeepListeningRef.current = false;
+    if (microphoneState !== MicrophoneState.Open && connectionState === LiveConnectionState.OPEN) {
+      connection.keepAlive();
+      keepAliveInterval = setInterval(() => {
+        connection.keepAlive();
+      }, 10000);
     }
-  }, []);
 
-  const startListening = useCallback(() => {
-    if (recognitionRef.current && !isListening) {
-      shouldKeepListeningRef.current = true;
-      setTranscript("");
-      transcriptRef.current = "";
-      setTranscripts([]);
-      setInterimTranscript("");
-      hasUnprocessedSpeechRef.current = false;
-      lastSpeechTimeRef.current = Date.now(); // Reset timer
-      setIsListening(true);
-      try { recognitionRef.current.start(); } catch {}
-    }
-  }, [isListening]);
-
-  const stopListening = useCallback(() => {
-    if (recognitionRef.current && isListening) {
-      shouldKeepListeningRef.current = false;
-      setIsListening(false);
-      recognitionRef.current.stop();
-      clearRestartTimeout();
-    }
-  }, [clearRestartTimeout, isListening]);
+    return () => clearInterval(keepAliveInterval);
+  }, [microphoneState, connectionState, connection]);
 
   const toggleListening = useCallback(() => {
-    isListening ? stopListening() : startListening();
-  }, [isListening, startListening, stopListening]);
+    if (isListening) {
+      stopMicrophone();
+      setIsListening(false);
+    } else {
+      startMicrophone();
+      setIsListening(true);
+      lastSpeechTimeRef.current = Date.now();
+    }
+  }, [isListening, startMicrophone, stopMicrophone]);
 
   return {
-    isListening, transcript, interimTranscript, transcripts, toggleListening
+    isListening,
+    transcript,
+    interimTranscript,
+    microphone,
+    toggleListening,
   };
 }

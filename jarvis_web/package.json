@@ -10,6 +10,7 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "@deepgram/sdk": "^4.5.1",
     "@libsql/client": "^0.17.3",
     "@pixiv/three-vrm": "^3.5.2",
     "@pixiv/three-vrm-animation": "^3.5.2",

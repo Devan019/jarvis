@@ -6,9 +6,21 @@ import { useSpeechRecognition } from "../hooks/useSpeechRecognition";
 
 export function Subtitles() {
   const [isVisible, setIsVisible] = useState(false);
-  const { isListening, transcript, interimTranscript, transcripts, toggleListening } = useSpeechRecognition();
+  const { 
+    isListening, 
+    transcript, 
+    interimTranscript, 
+    toggleListening 
+  } = useSpeechRecognition();
 
-  useEffect(() => setIsVisible(true), []);
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  // 💡 Combine final transcript blocks with incoming real-time interim results
+  const currentDisplayCaption = transcript 
+    ? `${transcript} ${interimTranscript}`.trim() 
+    : interimTranscript.trim();
 
   return (
     <div className={`mt-4 transition-all duration-1000 transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
@@ -23,7 +35,10 @@ export function Subtitles() {
                 Subtitles / CRT
               </h3>
             </div>
-            <button onClick={toggleListening} className={`p-2 rounded-lg transition-all duration-300 ${isListening ? "bg-yellow-500/20 border border-yellow-500 text-yellow-300 hover:bg-yellow-500/40" : "bg-slate-800 border border-slate-600 text-gray-300 hover:bg-slate-700"}`}>
+            <button 
+              onClick={toggleListening} 
+              className={`p-2 rounded-lg transition-all duration-300 ${isListening ? "bg-yellow-500/20 border border-yellow-500 text-yellow-300 hover:bg-yellow-500/40" : "bg-slate-800 border border-slate-600 text-gray-300 hover:bg-slate-700"}`}
+            >
               {isListening ? <Mic className="w-4 h-4" /> : <MicOff className="w-4 h-4" />}
             </button>
           </div>
@@ -34,24 +49,19 @@ export function Subtitles() {
               <span className={`h-2 w-2 rounded-full ${isListening ? "bg-yellow-400 animate-pulse" : "bg-slate-600"}`} />
               Live subtitle
             </div>
-            <p className="break-words">
-              {isListening ? interimTranscript || "Speak now..." : transcript || "Mic is off"}
+            <p className="break-words min-h-[1.5rem]">
+              {isListening 
+                ? currentDisplayCaption || "Listening for speech..." 
+                : "Mic is off"}
             </p>
           </div>
 
-          {/* History */}
-          <div className="flex-1 space-y-3 overflow-y-auto max-h-40">
-            {transcripts.map((msg) => (
-              <div key={msg.id} className="animate-in fade-in duration-300">
-                <div className="flex items-start gap-2">
-                  <span className="text-green-400 text-xs font-mono shrink-0 mt-0.5">&gt;</span>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-green-300 text-sm leading-relaxed break-words font-mono">{msg.text}</p>
-                    <p className="text-green-700 text-xs mt-1">{msg.timestamp.toLocaleTimeString()}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          {/* Informational Status Footer */}
+          <div className="flex items-center justify-between text-[10px] font-mono text-slate-500 border-t border-slate-800/60 pt-3 mt-auto">
+            <span>ENGINE: DEEPGRAM_NOVA_3</span>
+            <span className={isListening ? "text-yellow-500/70" : "text-green-500/70"}>
+              {isListening ? "STREAM_OPEN" : "STANDBY"}
+            </span>
           </div>
 
         </div>
