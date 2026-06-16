@@ -8,6 +8,19 @@
 
 ---
 
+## Quick Links
+- [Introduction](#introduction)
+- [The Problem](#the-problem)
+- [The Solution](#the-solution)
+- [Core Features](#core-features)
+- [Architecture Overview](#architecture-overview)
+- [Tech Stack](#tech-stack)
+- [Key Engineering Highlights](#key-engineering-highlights)
+- [Getting Started](#getting-started)
+- [Future Improvements](#future-improvements)
+
+---
+
 ## Introduction
 
 JARVIS is a real-time AI voice agent that combines speech recognition, large language models, tool calling, and a fully interactive 3D avatar to deliver a natural conversational experience.
@@ -174,7 +187,7 @@ The avatar responds visually to generated speech, creating a more immersive user
 
 ---
 
-# 🏗 Architecture Overview
+# Architecture Overview
 
 ![Architecture Overview](./arch.png)
 
