@@ -155,7 +155,7 @@ export default function WeatherCard() {
               >
                 <MapPin size={18} />
                 <span className="text-lg">
-                  {weather?.name}, {weather?.sys.country}
+                  {weather?.name}, {weather?.sys?.country}
                 </span>
               </motion.div>
 
@@ -178,7 +178,7 @@ export default function WeatherCard() {
                 transition={{ delay: 0.3 }}
                 className="text-7xl font-bold text-white"
               >
-                {Math.round(weather?.main.temp)}°
+                {Math.round(weather?.main?.temp)}°
               </motion.h1>
 
               <motion.p
@@ -201,14 +201,14 @@ export default function WeatherCard() {
               <div className="bg-white/10 rounded-2xl p-4 flex-1">
                 <p className="text-white/60 text-sm">Min Temp</p>
                 <p className="text-white text-2xl font-semibold">
-                  {weather?.main.temp_min}°
+                  {weather?.main?.temp_min}°
                 </p>
               </div>
 
               <div className="bg-white/10 rounded-2xl p-4 flex-1">
                 <p className="text-white/60 text-sm">Max Temp</p>
                 <p className="text-white text-2xl font-semibold">
-                  {weather?.main.temp_max}°
+                  {weather?.main?.temp_max}°
                 </p>
               </div>
             </motion.div>
@@ -229,25 +229,25 @@ export default function WeatherCard() {
               <WeatherInfoCard
                 icon={<Thermometer />}
                 title="Feels Like"
-                value={`${weather?.main.feels_like}°`}
+                value={`${weather?.main?.feels_like}°`}
               />
 
               <WeatherInfoCard
                 icon={<Droplets />}
                 title="Humidity"
-                value={`${weather?.main.humidity}%`}
+                value={`${weather?.main?.humidity}%`}
               />
 
               <WeatherInfoCard
                 icon={<Wind />}
                 title="Wind Speed"
-                value={`${weather?.wind.speed} m/s`}
+                value={`${weather?.wind?.speed} m/s`}
               />
 
               <WeatherInfoCard
                 icon={<Gauge />}
                 title="Pressure"
-                value={`${weather?.main.pressure} hPa`}
+                value={`${weather?.main?.pressure} hPa`}
               />
 
               <WeatherInfoCard
@@ -259,7 +259,7 @@ export default function WeatherCard() {
               <WeatherInfoCard
                 icon={<Cloud />}
                 title="Cloudiness"
-                value={`${weather?.clouds.all}%`}
+                value={`${weather?.clouds?.all}%`}
               />
             </div>
 
@@ -277,7 +277,7 @@ export default function WeatherCard() {
                 </div>
 
                 <h3 className="text-2xl font-bold">
-                  {formatTime(weather?.sys.sunrise)}
+                  {formatTime(weather?.sys?.sunrise)}
                 </h3>
               </div>
 
@@ -288,7 +288,7 @@ export default function WeatherCard() {
                 </div>
 
                 <h3 className="text-2xl font-bold">
-                  {formatTime(weather?.sys.sunset)}
+                  {formatTime(weather?.sys?.sunset)}
                 </h3>
               </div>
             </motion.div>
