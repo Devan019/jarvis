@@ -1,6 +1,6 @@
 # JARVIS – AI Voice Agent with Tool Calling & 3D Avatar
 
-<video src="./demo_jarvis.mp4" width="100%" controls></video>
+<video src="https://github.com/Devan019/jarvis/releases/download/video_1/demo_jarvis.mp4" width="100%" controls></video>
 
 ![JARVIS](https://img.shields.io/badge/JARVIS-AI%20Voice%20Agent-blue)
 ![Next.js](https://img.shields.io/badge/Frontend-Next.js-black)
